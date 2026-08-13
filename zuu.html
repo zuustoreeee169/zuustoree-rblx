@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZuuStoree - Pusat Item & Quest Roblox GAG2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* ANIMASI PRELOADER SPINNER ELEGAN */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000000;
+            z-index: 9999;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            animation: matikanLayar 0.5s ease-in-out 2.2s forwards;
+        }
+
+        /* Lingkaran Berputar (Spinner) */
+        .spinner-box {
+            position: relative;
+            width: 90px; height: 90px;
+            display: flex; justify-content: center; align-items: center;
+            margin-bottom: 20px;
+        }
+        .spinner-ring {
+            position: absolute;
+            width: 100%; height: 100%;
+            border: 3px solid transparent;
+            border-top-color: #10b981;
+            border-bottom-color: #047857;
+            border-radius: 50%;
+            animation: putarRing 1.2s linear infinite;
+        }
+        .spinner-icon {
+            color: #10b981; font-size: 2rem;
+            animation: kedipIcon 1s ease-in-out infinite alternate;
+        }
+
+        .preloader-text {
+            color: #ffffff;
+            font-weight: 800; font-size: 1.5rem;
+            letter-spacing: 1px;
+            animation: kedipTeks 1s ease-in-out infinite alternate;
+        }
+
+        /* Keyframes Animasi Preloader */
+        @keyframes putarRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes kedipIcon { 0% { opacity: 0.4; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1.1); } }
+        @keyframes kedipTeks { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+        @keyframes matikanLayar { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
+
+        /* Animasi Fade-In Kotak Utama */
+        .konten-utama { animation: fadeInKotak 0.8s ease-in-out 2.2s forwards; opacity: 0; }
+        @keyframes fadeInKotak { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .interactive-btn:hover { transform: scale(1.03); }
+        .floating-wa { animation: wa-bounce 2s infinite ease-in-out; }
+        @keyframes wa-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <!-- PRELOADER BARU (LINGKARAN BERPUTAR + IKON WIZARD) -->
+    <div id="preloader">
+        <div class="spinner-box">
+            <div class="spinner-ring"></div>
+            <i class="fa-solid fa-hat-wizard spinner-icon"></i>
+        </div>
+        <div class="preloader-text">ZuuStoree</div>
+    </div>
+
+    <!-- KOTAK UTAMA TOKO -->
+    <div class="max-w-md w-full bg-slate-900/90 backdrop-blur-xl border border-emerald-500/30 p-6 rounded-3xl text-center shadow-2xl z-10 konten-utama">
+        <div class="w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-emerald-700 to-emerald-900 rounded-full border-4 border-emerald-500/30 shadow-lg shadow-emerald-900/50">
+            <i class="fa-solid fa-hat-wizard text-4xl text-emerald-300"></i>
+        </div>
+
+        <h1 class="text-2xl font-extrabold text-white">ZuuStoree</h1>
+        <p class="text-xs text-emerald-300 mb-6 font-medium">Pusat Item & Quest Roblox GAG2</p>
+        
+        <!-- Info DANA -->
+        <div class="space-y-3 mb-6 text-left text-xs bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80">
+            <div class="flex justify-between items-center py-1">
+                <span class="font-medium text-slate-300">Roblox Item</span>
+                <span class="font-bold text-emerald-400">Rp 1rb - 50rb</span>
+            </div>
+            <div class="pt-3 border-t border-slate-800 flex justify-between text-slate-400">
+                <span>DANA Admin:</span>
+                <strong class="text-white" id="danaNumber">0822-5685-2654</strong>
+            </div>
+        </div>
+
+        <!-- Tombol QR & Testi -->
+        <div class="grid grid-cols-2 gap-3 mb-4">
+            <button onclick="openQRModal()" class="py-3 bg-slate-950 hover:bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-xl interactive-btn transition">QRIS</button>
+            <a href="https://whatsapp.com/channel/0029VbCJDxD1XquYKVRvqp1K" target="_blank" class="py-3 bg-slate-950 hover:bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-xl interactive-btn transition flex items-center justify-center">TESTI</a>
+        </div>
+
+        <a href="https://wa.me/6282256852654" target="_blank" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 interactive-btn shadow-lg shadow-emerald-600/30 transition">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Order Sekarang
+        </a>
+    </div>
+
+    <!-- Tombol WA Melayang -->
+    <a href="https://wa.me/6282256852654" target="_blank" class="fixed bottom-5 right-5 z-40 bg-emerald-500 text-slate-950 w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-lg floating-wa interactive-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal QR -->
+    <div id="qrModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 p-5 rounded-3xl max-w-xs w-full text-center border border-emerald-500/30 relative shadow-2xl">
+            <img src="223165.jpg" class="w-full rounded-xl mb-4 border border-slate-700">
+            <button onclick="closeQRModal()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold rounded-xl transition">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        function openQRModal() { document.getElementById('qrModal').classList.remove('hidden'); }
+        function closeQRModal() { document.getElementById('qrModal').classList.add('hidden'); }
+    </script>
+</body>
+</html>
